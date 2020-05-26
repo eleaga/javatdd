@@ -3,7 +3,6 @@ public class User {
     public String firstName;
     public String lastName;
     public String cpf;
-    public String cep;
 
     public boolean validateAge(){
         age = this.getAge();
@@ -25,8 +24,19 @@ public class User {
         return cpf.replaceAll("\\D+","");
     }
 
-    public String validateCEP() {
-        return cep.replaceAll("\\D+","");
+    public String  profile () {
+        String profile = null;
+        if (age < 18) {
+            profile = "teen";
+        }
+        else if(age >= 18 && age < 64){
+            profile = "adult";
+        }
+        else{
+            profile = "senior";
+        }
+
+        return profile;
     }
 
     public boolean isEmailValid(String email) {

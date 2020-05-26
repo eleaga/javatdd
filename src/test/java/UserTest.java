@@ -5,6 +5,34 @@ import java.util.function.IntPredicate;
 
 public class UserTest  {
 
+    @Test
+    public void userShouldBeAdult() throws Exception {
+        User user = new User();
+        user.age = 20;
+
+        String profile = user.profile();
+
+        Assert.assertEquals(profile, "adult" );
+    }
+    @Test
+    public void userShouldBeTeen() throws Exception {
+        User user = new User();
+        user.age = 10;
+
+        String profile = user.profile();
+
+        Assert.assertEquals(profile, "teen" );
+    }
+    
+    @Test
+    public void userShouldBeSenior() throws Exception {
+        User user = new User();
+        user.age = 65;
+
+        String profile = user.profile();
+
+        Assert.assertEquals(profile, "senior" );
+    }
 
     @Test
     public void userShouldNotIsOver() throws Exception {
@@ -86,15 +114,6 @@ public class UserTest  {
         user.cpf="123.123.123-12";
 
         Assert.assertEquals(user.validateCPF(), "12312312312");
-    }
-
-    @Test
-    public void userShouldHaveValidCEP() throws Exception {
-        User user = new User();
-
-        user.cep="00000-000";
-
-        Assert.assertEquals(user.validateCEP(), "00000000");
     }
 
     @Test
