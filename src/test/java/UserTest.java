@@ -23,7 +23,7 @@ public class UserTest  {
 
         Assert.assertEquals(profile, "teen" );
     }
-    
+
     @Test
     public void userShouldBeSenior() throws Exception {
         User user = new User();
@@ -87,24 +87,6 @@ public class UserTest  {
         Boolean email = user.isEmailValid("asd@asd.com");
 
         Assert.assertEquals(email, true);
-    }
-
-    @Test
-    public void userShoulHaveNotInvalidEmail() throws Exception {
-        User user = new User();
-
-        Boolean email = user.isEmailValid("asd@asd");
-
-        Assert.assertEquals(email, false);
-    }
-
-    @Test
-    public void userEmailShouldBeValid() throws Exception {
-        User user = new User();
-
-        Boolean email = user.isEmailValid("asdasd.com");
-
-        Assert.assertEquals(email, false);
     }
 
     @Test
